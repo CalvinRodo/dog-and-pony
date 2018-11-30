@@ -13,7 +13,7 @@ steps:
     password:
       from_secret: QUAY_PWORD
     registry: quay.io
-    repo: quay.io/calvinrodo/terraformpresentation
+    repo: quay.io/calvinrodo/dog-and-pony
     tags:
       - latest
     username: calvinrodo+presentations
