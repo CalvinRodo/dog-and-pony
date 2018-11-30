@@ -1,0 +1,28 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dog-and-pony
+spec:
+  containers:
+    - name: dog-and-pony
+      image: quay.io/calvinrodo/dog-and-pony:latest
+      imagePullPolicy: Always
+      resources:
+        limits:
+          memory: "64Mi"
+          cpu: "250m"
+      ports:
+      - containerPort: 8000
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: dog-and-pony-service
+spec:
+  selector:
+    app: dog-and-pony
+  ports:
+  - protocol: TCP
+    port: 8000
+    targetPort: 8000
